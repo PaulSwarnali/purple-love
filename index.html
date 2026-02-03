@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>For You 💜</title>
+
+  <!-- Cute Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f6e8ff;
+      font-family: "Quicksand", sans-serif;
+      text-align: center;
+      padding: 40px;
+      color: #4b2c69;
+    }
+    .note {
+      display: none;
+      margin: 20px auto;
+      padding: 18px;
+      width: 280px;
+      background: #e6d0ff;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    button {
+      padding: 12px 20px;
+      margin-top: 15px;
+      background: #a56bff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button:hover {
+      background: #8b4dff;
+    }
+    #finalBox {
+      display: none;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>I have something for you… 💌</h2>
+
+  <button id="openBtn" onclick="showNext()">Open Note</button>
+
+  <!-- Poem lines (FIXED broken tag) -->
+  <div class="note">It's been 10 months we have met,<br>well we are dating to be precise.</div>
+
+  <div class="note">And somehow even simple things<br>start feeling just… right by your side. Well… except for parties 😭</div>
+
+  <div class="note">All I need every single day is you,<br>and honestly nothing gives me more joy than simply being with you.</div>
+
+  <div class="note">You are the one person in this entire world<br>that I want to spend the rest of my life with. Our lives. Together.</div>
+
+  <div class="note"><strong>Just a tiny question remains…</strong></div>
+
+  <!-- Final Yes/No section -->
+  <div id="finalBox">
+    <h3>Will you be my Valentine? 💜</h3>
+    <button onclick="sayYes()">Yesssss!!! 💗</button>
+    <button onclick="sayNo()">No 🙄</button>
+
+    <p id="result" style="font-size:20px; margin-top:20px;"></p>
+  </div>
+
+  <script>
+    let index = 0;
+
+    function showNext() {
+      const notes = document.querySelectorAll('.note');
+
+      if (index < notes.length) {
+        notes[index].style.display = "block";
+        index++;
+      }
+
+      if (index === notes.length) {
+        document.getElementById("finalBox").style.display = "block";
+      }
+    }
+
+    function sayYes() {
+      document.getElementById("result").innerHTML =
+        "YAY! You are my Valentine! 💜💜💜";
+    }
+
+    function sayNo() {
+      document.getElementById("result").innerHTML =
+        "❌ ERROR 404: Correct answer not found.";
+    }
+  </script>
+
+</body>
+</html>
